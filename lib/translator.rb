@@ -16,7 +16,7 @@ end
 def get_japanese_emoticon(path, emoticon)
        emoticons = load_library(path)
        emoticons.each do |key, value|
-            if library[key][:japanese] ==  emoticon
+            if library[key][value] ==  emoticon
            return key
          end 
       
