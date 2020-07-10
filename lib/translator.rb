@@ -24,16 +24,22 @@ def get_japanese_emoticon(path, emoticons)
 end 
 
 
-def get_english_meaning(path, emoticons)
-    
-    emoticons = load_library(path)
+def get_english_meaning(path, emoticon)
+     library = load_library(path)
+     library.each do | key, value |
+         if library[key][:japanese] ==  emoticon
+           return key
+        end 
+   end 
      
-  result = emoticons["get_meaning"][emoticons] 
-  
-  if result
-     result
-  else
-    "Sorry, that emoticon was not found"
-  end
+     
+      #result = emoticon["get_english_meaning"][library]
+  #binding.pry 
+  #emoticon["wink"][:japanese]
+  #binding.pry
+  #if result
+  ## else
+ #"Sorry, that emoticon was not found"
+ # end
  end
  
